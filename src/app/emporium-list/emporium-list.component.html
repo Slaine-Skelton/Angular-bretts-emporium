@@ -1,0 +1,9 @@
+<p>
+  emporium-list works!
+</p>
+<app-emporium-item
+  *ngFor="let item of emporiumList"
+  [emporiumItem]="item"
+  (click)='clicked(myProduct)'
+  [class.selected]="isSelected(myProduct)">
+</app-emporium-item>

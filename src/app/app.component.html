@@ -1,12 +1,19 @@
-<section class="header">
+<section id="header">
+  <nav id="login_menu">
+      <a class="nav_item" [routerLink]="['login']">Login</a>
+      <a class="nav_item" [routerLink]="['register']">Register</a>
+  </nav>
   <h1>Brett's Awesome Book Emporium</h1>
+  
   <app-breadcrumbs></app-breadcrumbs>
-  <nav class="main_menu">
-    <a class="nav_item" [routerLink]="['home']">Home</a>
+  <nav id="main_menu">
+    <a class="nav_item" [routerLink]="['home']">Emporium</a>
     <a class="nav_item" [routerLink]="['mylibrary']">My Library</a>
     <a class="nav_item" [routerLink]="['profile']">Profile</a>
   </nav>
+  
 </section>
 
-
-<router-outlet></router-outlet>
+<section id="main-content">
+  <router-outlet></router-outlet>
+</section>

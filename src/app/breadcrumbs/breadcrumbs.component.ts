@@ -1,6 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute, NavigationEnd, PRIMARY_OUTLET } from "@angular/router";
+import { Router, ActivatedRoute, NavigationEnd, Params, PRIMARY_OUTLET } from "@angular/router";
 import { filter } from 'rxjs/operators';
+
+interface IBreadcrumb {
+  label: string;
+  params?: Params;
+  url: string;
+}
 
 @Component({
   selector: 'app-breadcrumbs',
