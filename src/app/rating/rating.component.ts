@@ -10,7 +10,9 @@ export class RatingComponent implements OnInit {
 
   @Input() emporiumItem: EmporiumItem;
 
-  constructor() { }
+  constructor() { 
+    
+  }
 
   ngOnInit() {
   }

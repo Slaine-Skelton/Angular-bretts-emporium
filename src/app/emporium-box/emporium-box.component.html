@@ -1,8 +1,7 @@
 <app-avatar-image [emporiumItem]="emporiumItem"></app-avatar-image>
-  <div class="content">
-    <div class="lib-name">{{ emporiumItem.libraryName }}</div>
-    <div class="description">
-      <app-book-count [emporiumItem]="emporiumItem"></app-book-count>
-    </div>
+  <div class="details">
+    <app-library-name [emporiumItem]="emporiumItem"></app-library-name>
+    <app-book-count [emporiumItem]="emporiumItem"></app-book-count>
+    <app-rating [emporiumItem]="emporiumItem"></app-rating>
   </div>
-<app-rating [emporiumItem]="emporiumItem.rating"></app-rating>
+

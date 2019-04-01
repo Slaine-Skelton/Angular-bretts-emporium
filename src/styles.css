@@ -28,3 +28,36 @@
     /* color is for testing */
     background-color: antiquewhite;
 }
+
+
+/******************
+library item
+******************/
+app-emporium-box {
+    padding: 20px;
+    display: inline-block;
+    width: 45%;
+    background-color: white;
+    margin-top: 5px;
+}
+
+app-emporium-box:nth-child(even) {
+    margin-right: 1.6%;
+}
+
+app-emporium-box .details {
+    display: inline-block;
+}
+
+app-library-name h3 {
+    display: inline-block;
+    margin: 0;
+}
+
+app-avatar-image img {
+    width: 180px;
+    height: 180px;
+    border: 2px solid tomato;
+    border-radius: 50%;
+    margin: 20px
+}

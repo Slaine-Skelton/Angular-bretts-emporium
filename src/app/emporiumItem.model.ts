@@ -9,9 +9,9 @@ import { RatingComponent } from './rating/rating.component';
 export class EmporiumItem {
     constructor(
         public userID: string,
-        public avatar: AvatarImageComponent,
-        public LibraryName: LibraryNameComponent,
-        public size: BookCountComponent,
-        public rating: RatingComponent) {
+        public avatar: string,
+        public libraryName: string,
+        public size: number,
+        public rating: number) {
     }
 }
