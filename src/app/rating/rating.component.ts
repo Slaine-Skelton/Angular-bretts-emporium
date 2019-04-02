@@ -10,6 +10,8 @@ export class RatingComponent implements OnInit {
 
   @Input() emporiumItem: EmporiumItem;
 
+    Arr = Array;
+
   constructor() { 
     
   }

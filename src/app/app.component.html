@@ -1,19 +1,26 @@
 <section id="header">
-  <nav id="login_menu">
-      <a class="nav_item" [routerLink]="['login']">Login</a>
-      <a class="nav_item" [routerLink]="['register']">Register</a>
-  </nav>
-  <h1>Brett's Awesome Book Emporium</h1>
-  
-  <app-breadcrumbs></app-breadcrumbs>
-  <nav id="main_menu">
-    <a class="nav_item" [routerLink]="['home']">Emporium</a>
-    <a class="nav_item" [routerLink]="['mylibrary']">My Library</a>
-    <a class="nav_item" [routerLink]="['profile']">Profile</a>
+  <div id="padSpace">
+    <nav class="ui secondary menu">
+        <div class="right menu">
+          <a class="ui item" [routerLink]="['login']">Login</a>
+          <a class="ui item" [routerLink]="['register']">Register</a>
+        </div>
+    </nav>
+
+    <h1>Brett's Awesome Book Emporium</h1>
+    <app-breadcrumbs></app-breadcrumbs>
+  </div>
+
+  <nav class="ui secondary pointing menu">
+    <div id="main_menu" class="menu">
+      <a class="ui item" [routerLink]="['home']">Emporium</a>
+      <a class="ui item" [routerLink]="['mylibrary']">My Library</a>
+      <a class="ui item" [routerLink]="['profile']">Profile</a>
+    </div>
   </nav>
   
 </section>
 
-<section id="main-content">
+<section class="ui container">
   <router-outlet></router-outlet>
 </section>

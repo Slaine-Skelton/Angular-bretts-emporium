@@ -18,6 +18,10 @@ import { LibraryNameComponent } from './library-name/library-name.component';
 import { BookCountComponent } from './book-count/book-count.component';
 import { RatingComponent } from './rating/rating.component';
 import { EmporiumBoxComponent } from './emporium-box/emporium-box.component';
+import { BookListComponent } from './book-list/book-list.component';
+import { BookItemComponent } from './book-item/book-item.component';
+
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -34,12 +38,15 @@ import { EmporiumBoxComponent } from './emporium-box/emporium-box.component';
     LibraryNameComponent,
     BookCountComponent,
     RatingComponent,
-    EmporiumBoxComponent
+    EmporiumBoxComponent,
+    BookListComponent,
+    BookItemComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    routing
+    routing,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

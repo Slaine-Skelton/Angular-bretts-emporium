@@ -1,3 +1,4 @@
-<p>Rating: {{ emporiumItem.rating }} </p>
-<p *ngIf="emporiumItem.rating > 0"> {{emporiumItem.rating}}</p>
+<p>Rating: 
+    <i class="ui star icon" *ngFor="let item of Arr(emporiumItem.rating).fill(1)"></i>
+</p>
 

@@ -1,3 +1,65 @@
-<p>
-  mylibrary works!
-</p>
+<button id="addBook" (click)="addModal()" class="positive ui button">Add Book</button>
+
+<app-book-list class="ui one column grid"
+[bookList]="bookList"
+(onItemSelected)="itemWasSelected($event)"></app-book-list>
+
+<!-- Custom modal setup -->
+<div id="modal-container" class="{{hidden}}">
+    <div id="newBookWindow" class="ui segment ">
+        
+        
+            
+            <form class="ui form grid" style="margin: 0;">
+                <div class="eight wide column">
+                    <img class="small image bookCover" src="" alt="book cover" >
+                    <div class="field">
+                        Title: 
+                        <input type="text" name="title" placeholder="Enter ISBN" >
+                    </div>
+                    <div class="field">
+                        Author: 
+                        <input type="text" name="author" placeholder="Enter ISBN" >
+                    </div>
+                </div>
+                <div class="eight wide column">
+                    <div class="field">
+                        ISBN: 
+                        <input type="text" name="isbn" placeholder="Enter ISBN" #isbn>
+                        <button class="ui button primary" (click)="getBookDetails(isbn.value)" type="submit">Search</button>
+                    </div>
+                    <div class="field">
+                        Publisher: 
+                        <input type="text" name="publisher" placeholder="Enter ISBN" >
+                    </div>
+                    <div class="field">
+                        Publish Date: 
+                        <input type="text" name="publishDate" placeholder="Enter ISBN" >
+                    </div>
+                    <div class="field">
+                        Binding: 
+                        <input type="text" name="Binding" placeholder="Enter ISBN" >
+                    </div>
+                    <div class="field">
+                        Edition: 
+                        <input type="text" name="Edition" placeholder="Enter ISBN" >
+                    </div>
+                </div>
+            </form>
+            <div *ngIf="bookData" class="ui raised segment">
+                <p >Book: {{bookData.items[0].volumeInfo.title}}</p>
+            </div>
+            <div class="ui form" style="margin: 14px;">
+                <div class="field">
+                    <label>Description</label>
+                    <textarea></textarea>
+                </div>
+            </div>
+            <button class="ui primary button right floated" >Save</button>
+            <button class="ui button right floated" (click)="removeModal()">Discard</button>
+            
+            
+        
+    </div>
+    
+</div>

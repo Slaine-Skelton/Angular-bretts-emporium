@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
         "/assets/images/4m.jpg",
         "Crazy Library",
         21,
-        3
+        1
       ),
 
       new EmporiumItem(
@@ -34,7 +34,30 @@ export class HomeComponent implements OnInit {
         "/assets/images/2m.jpg",
         "Nosey Library",
         7,
-        3
+        5
+      ),
+      new EmporiumItem(
+        "Scary Reader",
+        "/assets/images/3m.jpg",
+        "Scary Library",
+        21,
+        2
+      ),
+
+      new EmporiumItem(
+        "Serious Reader",
+        "/assets/images/3f.jpg",
+        "Serious Library",
+        4,
+        4
+      ),
+
+      new EmporiumItem(
+        "Jumpy Reader",
+        "/assets/images/2f.jpg",
+        "Jumpy Library",
+        7,
+        5
       )
       ];
 

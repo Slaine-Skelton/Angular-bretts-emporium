@@ -1,0 +1,5 @@
+<app-book-item class="column"
+*ngFor="let item of bookList"
+[book]="item"
+(click)='clicked(item)'
+[class.selected]="isSelected(item)"></app-book-item>
