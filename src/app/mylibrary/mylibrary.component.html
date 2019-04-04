@@ -14,10 +14,10 @@
             
             <form class="ui form grid" style="margin: 0;">
                 <div class="eight wide column">
-                    <img class="small image bookCover" src="" alt="book cover" >
+                    <img class="small image bookCover" src="{{image}}" alt="book cover">
                     <div class="field">
                         Title: 
-                        <input type="text" name="title" placeholder="Enter ISBN" >
+                        <input type="text" name="title" placeholder="Enter ISBN" value="{{title}}" >
                     </div>
                     <div class="field">
                         Author: 
@@ -48,9 +48,6 @@
                     </div>
                 </div>
             </form>
-            <div *ngIf="bookData" class="ui raised segment">
-                <p >Book: {{bookData.items[0].volumeInfo.title}}</p>
-            </div>
             <div class="ui form" style="margin: 14px;">
                 <div class="field">
                     <label>Description</label>

@@ -15,7 +15,12 @@ export class MylibraryComponent implements OnInit {
   hidden: string;
   bookList: Book[];
 
+  title: string;
+  image: string;
+
   constructor(private _googleBooksService: GooglebooksApiService) { 
+
+    this.emptyInputValues();
 
     this.hidden = "hidden";
 
@@ -67,9 +72,14 @@ export class MylibraryComponent implements OnInit {
   }
 
   getBookDetails(isbn: string): boolean {
-    this._googleBooksService.getBookData(isbn).subscribe(bookData => {
+    this._googleBooksService.getBookData(isbn).subscribe(
+      
+      bookData => {
+
+
       this.bookData = bookData;
-      console.log('getBookDetails: ' + this.bookData);
+      console.log('getBookDetails: ' + this.bookData.items[0].volumeInfo.title);
+      this.setInputData();
     },
     error => this.errorMessage = <any>error);
     return false;
@@ -83,4 +93,14 @@ export class MylibraryComponent implements OnInit {
     this.hidden ="hidden";
   }
 
+  emptyInputValues(){
+    this.title = "";
+    this.image = "";
+  }
+
+  setInputData(){
+    this.title = this.bookData.items[0].volumeInfo.title;
+    this.image = this.bookData.items[0].volumeInfo.imageLinks.thumbnail;
+    
+  }
 }

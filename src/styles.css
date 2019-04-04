@@ -66,15 +66,20 @@ Book items
 #newBookWindow{
     margin: 5% auto;
     width: 60%;
+    max-width: 600px;
     max-height: 80%;
     background-color: white;
     overflow-y: auto;
 }
 .modalHeader {
-    background: grey;
+    background: #eee;
+    height: 35px;
+    margin: -14px -14px 10px;
+    padding: 5px;
 }
 .closeX {
     float: right;
+    border-radius: 5px;
 }
 
 .bookCover {
