@@ -64,13 +64,17 @@ Book items
 }
 
 #newBookWindow{
-    width: 580px;
-    height: 680px;
-    left: 50%;
-    margin-left: -290px;
-    top: 50%;
-    margin-top: -340px;
+    margin: 5% auto;
+    width: 60%;
+    max-height: 80%;
     background-color: white;
+    overflow-y: auto;
+}
+.modalHeader {
+    background: grey;
+}
+.closeX {
+    float: right;
 }
 
 .bookCover {
