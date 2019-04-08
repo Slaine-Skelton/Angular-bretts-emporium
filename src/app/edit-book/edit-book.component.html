@@ -1,0 +1,59 @@
+<!-- Custom modal setup -->
+<div id="modal-container">
+  <div id="newBookWindow" class="ui segment ">
+    <div class="modalHeader">
+        <button class="closeX" (click)="closeWindow()">X</button>
+    </div>
+  <div *ngIf="selectedBook">
+        
+    <form class="ui form grid" style="margin: 0;">
+      <div class="eight wide column">
+        <img class="small image bookCover" src="{{selectedBook.cover}}" alt="book cover">
+        <div class="field">
+            Binding: 
+            <input type="text" name="Binding" placeholder="Enter binding type" [(ngModel)]="selectedBook.binding">
+        </div>
+          <div class="field">
+              Link: 
+              <a href="{{selectedBook.amazonLink}}" target="blank">View on Amazon</a>
+          </div>
+          
+      </div>
+      <div class="eight wide column">
+        <div class="field">
+            ISBN10: 
+            <input type="text" name="isbn" placeholder="Enter ISBN10 only" [(ngModel)]="selectedBook.isbn10">
+            <button class="ui button primary" (click)="getBookDetails()" type="submit">Search</button>
+        </div>
+        <div class="field">
+            Title: 
+            <input type="text" name="title" placeholder="Enter title" [(ngModel)]="selectedBook.title" >
+        </div>
+        <div class="field">
+            Author: 
+            <input type="text" name="author" placeholder="Enter authors (separate by comma)" [(ngModel)]="selectedBook.authors" >
+        </div>
+        <div class="field">
+            Publisher: 
+            <input type="text" name="publisher" placeholder="Enter publisher" [(ngModel)]="selectedBook.publisher">
+        </div>
+        <div class="field">
+            Publish Date: 
+            <input type="text" name="publishDate" placeholder="Enter publication date" [(ngModel)]="selectedBook.publishDate">
+        </div>
+      </div>
+  
+      <div class="sixteen wide column" style="margin: 14px;">
+        <div class="field">
+          <label>Description</label>
+          <textarea name="description" [(ngModel)]="selectedBook.description" ></textarea>
+        </div>
+      </div>
+      <button class="ui primary button right floated" type="submit" (click)="editBook()" >Save</button>
+      <button class="ui button right floated" (click)="closeWindow()">Cancel</button>
+      
+    </form>
+
+    </div>
+  </div>
+</div>

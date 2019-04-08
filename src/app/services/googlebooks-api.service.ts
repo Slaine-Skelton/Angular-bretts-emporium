@@ -15,7 +15,7 @@ export class GooglebooksApiService {
   }
 
   getBookData(isbn: string): Observable<IBookResponse>{
-    console.log("URL: "+this._siteURL+isbn);
+    //console.log("URL: "+this._siteURL+isbn);
 
     return this._http.get<IBookResponse>(this._siteURL+isbn).pipe(
     tap(data => console.log('All: ' + JSON.stringify(data))),

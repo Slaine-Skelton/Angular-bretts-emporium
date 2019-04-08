@@ -1,3 +1,20 @@
-<p>
-  login works!
-</p>
+<div *ngIf="!isLoggedIn" style="padding: 40px; background-color: rgba(255,225,255,0.8);">
+  <form class="ui form grid" style="margin: 0;">
+    <div class="four wide column">
+        <div class="field">
+            Username: 
+            <input type="text" name="username" placeholder="Enter username" [(ngModel)]="localUsername">
+        </div>
+        <div class="field">
+            Password: 
+            <input type="password" name="password" placeholder="Enter password" [(ngModel)]="localPassword">
+        </div>
+        <button class="ui primary button right floated" type="submit" (click)="login()" >Login</button>
+        <span style="color: tomato;">{{message}}</span>
+    </div>
+  </form>
+  <p><br /><br />working details:<br />username: brettophski<br />password: pass</p>
+</div>
+<div *ngIf="isLoggedIn" style="min-height: 200px; padding: 40px; background-color: rgba(255,225,255,0.8);">
+    <button class="ui primary button" type="submit" (click)="logout()" >Logout</button>
+</div>

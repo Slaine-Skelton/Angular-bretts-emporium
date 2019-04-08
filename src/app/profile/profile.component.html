@@ -1,3 +1,51 @@
-<p>
-  profile works!
-</p>
+<div *ngIf="isLoggedIn" style="padding: 40px; background-color: rgba(255,225,255,0.8);">
+  <form class="ui form grid" style="margin: 0;">
+    <div class="four wide column"></div>
+    <div class="eight wide column">
+        <div class="field">
+            Library Name: 
+            <input type="text" name="library" placeholder="Enter library name" [(ngModel)]="user.libraryName">
+        </div>
+        <img class="small image" src="{{user.avatar}}" alt="profile image">
+        <!-- TODO select image dropdown -->
+        <div class="field">
+            Username: 
+            <input type="text" name="username" placeholder="Enter username" [(ngModel)]="user.username">
+        </div>
+        <div class="field">
+            First Name: 
+            <input type="text" name="firstname" placeholder="Enter publisher" [(ngModel)]="user.firstname">
+        </div>
+        <div class="field">
+            Last Name: 
+            <input type="text" name="lastname" placeholder="Enter publisher" [(ngModel)]="user.lastname">
+        </div>
+        <div class="field">
+            Email: 
+            <input type="text" name="email" placeholder="Enter ISBN10 only" [(ngModel)]="user.email">
+        </div>
+        <div class="field">
+            Password: 
+            <input type="text" name="password" placeholder="Enter title" [(ngModel)]="user.password" >
+        </div>
+        <button class="ui primary button right floated" type="submit" (click)="updateUser()" >Save</button>
+    </div>
+  </form>
+</div>
+<div *ngIf="!isLoggedIn" style="padding: 40px; background-color: rgba(255,225,255,0.8);">
+    <h2>You need to be logged in to view this.</h2>
+    <p>Please loggin to your account. Otherwise feel free to browse other users libraries.</p>
+</div>
+<!-- Custom modal setup -->
+<div id="modal-container" class="{{hidden}}">
+  <div id="deleteWindow" class="ui segment ">
+    <div class="modalHeader">
+        <button class="closeX" (click)="registered()">X</button>
+    </div>
+    
+        <p>Your profile has been updated.</p>
+    
+      <button class="ui button right floated" (click)="registered()">ok</button>
+
+  </div>
+</div>
