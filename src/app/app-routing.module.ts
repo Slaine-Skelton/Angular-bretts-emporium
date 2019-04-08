@@ -12,8 +12,9 @@ const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'mylibrary', component: MylibraryComponent, data: { breadcrumb: "My Library" } },
+  {path: 'mylibrary/:user', component: MylibraryComponent, data: { breadcrumb: "My Library" }},
   { path: 'profile', component: ProfileComponent, data: { breadcrumb: "Profile" } },
-  { path: 'userlibrary', component: UserlibraryComponent, data: { breadcrumb: "Profile" } },
+  { path: 'userlibrary', component: UserlibraryComponent, data: { breadcrumb: "Member Library" } },
   { path: 'login', component: LoginComponent, data: { breadcrumb: "Login" } },
   { path: 'register', component: RegisterComponent, data: { breadcrumb: "Register" } },
 ];

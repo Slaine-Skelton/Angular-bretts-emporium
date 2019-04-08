@@ -1,9 +1,11 @@
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Bad+Script" rel="stylesheet">
+</head>
 <section id="header">
   <div id="padSpace">
     <nav class="ui secondary menu">
         <div class="right menu">
           <a class="ui item" [routerLink]="['login']">Login</a>
-          <a class="ui item" [routerLink]="['register']">Register</a>
         </div>
     </nav>
 
@@ -24,3 +26,9 @@
 <section class="ui container">
   <router-outlet></router-outlet>
 </section>
+
+<footer style="margin-top: 20px;">
+    <div class="ui center aligned segment">
+        <p>Brett's emporium. The real deal.</p>
+    </div>
+</footer>

@@ -1,28 +1,33 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { EmporiumItem } from '../emporiumItem.model';
+import { FirestoreDbServiceService } from '../services/firestore-db-service.service';
 
 @Component({
   selector: 'app-emporium-list',
   templateUrl: './emporium-list.component.html',
-  styleUrls: ['./emporium-list.component.css']
+  styleUrls: ['./emporium-list.component.css'],
+  providers: [ 
+    FirestoreDbServiceService
+  ]
 })
 export class EmporiumListComponent implements OnInit {
 
-  @Input() emporiumList: EmporiumItem[];
-  @Output() onItemSelected: EventEmitter<EmporiumItem>;
+  @Output() onItemSelected: EventEmitter<IUser>;
 
-  private currentItem: EmporiumItem;
+  // variables
+  userDbData: IUser[];
 
-  constructor() { 
+  private currentItem: IUser;
+
+  constructor(private _firestoreBookService: FirestoreDbServiceService) { 
     this.onItemSelected = new EventEmitter();
   }
 
-  clicked(item: EmporiumItem): void {
+  clicked(item: IUser): void {
     this.currentItem = item;
     this.onItemSelected.emit(item);
   }
   
-  isSelected(item: EmporiumItem): boolean {
+  isSelected(item: IUser): boolean {
     if (!item || !this.currentItem) {
       return false;
     }
@@ -30,6 +35,8 @@ export class EmporiumListComponent implements OnInit {
   }
 
   ngOnInit() {
+    this._firestoreBookService.getUserData().subscribe(userDbData => 
+      {this.userDbData = userDbData});
   }
 
 }

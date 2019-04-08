@@ -1,4 +1,4 @@
-export interface IBookResponse {
+interface IBookResponse {
     kind: string;
     totalItems: number;
     items?: (ItemsEntity)[] | null;

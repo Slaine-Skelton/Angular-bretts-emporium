@@ -1,3 +1,11 @@
-<p>
-  userlibrary works!
-</p>
+<div *ngIf="emporiumItem" class="userInfo">
+    <h2>{{emporiumItem.firstname}} {{emporiumItem.lastname}}</h2>
+    <app-avatar-image class="" [emporiumItem]="emporiumItem"></app-avatar-image>
+      <div class="details">
+        <app-library-name [emporiumItem]="emporiumItem"></app-library-name>
+        <app-book-count [emporiumItem]="emporiumItem"></app-book-count>
+        <app-rating [emporiumItem]="emporiumItem"></app-rating>
+      </div>
+</div>
+
+<app-book-list class="ui one column grid"></app-book-list>

@@ -1,5 +1,5 @@
 <app-emporium-box class="column"
-  *ngFor="let item of emporiumList"
+  *ngFor="let item of userDbData"
   [emporiumItem]="item"
   (click)='clicked(item)'
   [class.selected]="isSelected(item)">

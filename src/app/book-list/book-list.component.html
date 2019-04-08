@@ -1,5 +1,35 @@
-<app-book-item class="column"
-*ngFor="let item of bookList"
-[book]="item"
-(click)='clicked(item)'
-[class.selected]="isSelected(item)"></app-book-item>
+<app-add-book 
+    (addBookEE)="addBook($event)" >
+</app-add-book>
+<app-edit-book class="{{hidden}}"
+    (editBookEE)="editBook($event)" 
+    (editCloseBookEE)="closeWindow()"
+    [selectedBook]="editSelected">
+</app-edit-book>
+
+<div class="ui success message {{hiddenMessage}}">
+    <i class="close icon" (click)="close()"></i>
+    <div class="header">
+        {{msg}}
+    </div>
+    <p>{{msg2}}</p>
+</div>
+<app-book-item 
+    class="column"
+    *ngFor="let book of bookDbData" 
+    [bookItem]="book"
+    (click)='clicked(book)'
+    [class.selected]="isSelected(book)"
+    (modifyBookEE)="modifyBook($event)" 
+    (confirmDeleteBookEE)="confirmDeleteBook($event)">
+</app-book-item>
+
+<app-delete-window class="{{hideDelete}}"
+    (deleteBookEE)="deleteBook($event)"
+    [bookToDelete]="bookToDelete"
+    [hideDelete]="hideDelete">
+</app-delete-window>
+<div *ngIf="noAccess">
+    <h2>You need to be logged in to view your library.</h2>
+    <p>Please loggin to your account. Otherwise feel free to browse other users libraries.</p>
+</div>

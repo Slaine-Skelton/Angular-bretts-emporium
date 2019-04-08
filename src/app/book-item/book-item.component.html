@@ -1,22 +1,23 @@
-<div class="ui items segment">
+<div class="ui items segment" *ngIf="show">
   <div class="item">
     <div class="image">
-        <img class="ui small image" [src]="book.bookCover" alt="book cover" />
+        <img class="ui small image" [src]="bookItem.cover" alt="book cover" />
     </div>
     <div class="content">
-      <a class="header">{{ book.title }}</a>
+      <a class="header">{{ bookItem.title }}</a>
     <div class="meta">
-        <span class="" >Author: {{ book.author }} </span>
-        <span class="" > Publish Date: {{ book.publishDate }}</span>
+        <span class="" >Author: {{ bookItem.authors }} </span>
+        <span class="" > Publish Date: {{ bookItem.publishDate }}</span>
     </div>
     <div class="description">
       <br />
         <p><strong>Description</strong></p>
-        <p class="" >{{ book.description }}</p>
+        <p class="" >{{ bookItem.description }}</p>
     </div>
     
-    <div class="extra">
-        
+    <div class="extra" *ngIf="isOwner">
+      <button id="addBook" (click)="modifyBook()" class="positive ui right floated button">Edit</button>
+      <button id="addBook" (click)="confirmDeleteBook()" class="negative ui right floated button">Delete</button>
     </div>
   </div>
 </div>

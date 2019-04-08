@@ -23,6 +23,16 @@ import { BookItemComponent } from './book-item/book-item.component';
 
 import { HttpClientModule } from "@angular/common/http";
 
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireModule } from '@angular/fire';
+import { environment } from '../environments/environment';
+import { AddBookComponent } from './add-book/add-book.component';
+
+import { FormsModule } from '@angular/forms';
+import { EditBookComponent } from './edit-book/edit-book.component';
+import { DeleteWindowComponent } from './delete-window/delete-window.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,15 +50,23 @@ import { HttpClientModule } from "@angular/common/http";
     RatingComponent,
     EmporiumBoxComponent,
     BookListComponent,
-    BookItemComponent
+    BookItemComponent,
+    AddBookComponent,
+    EditBookComponent,
+    DeleteWindowComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     routing,
-    HttpClientModule
+    HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebase,),
+    AngularFirestoreModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
