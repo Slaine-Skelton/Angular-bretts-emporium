@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { userInfo } from 'os';
 
 @Injectable({
   providedIn: 'root'
