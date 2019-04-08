@@ -15,7 +15,6 @@ import { RegisterComponent } from './register/register.component';
 import { EmporiumListComponent } from './emporium-list/emporium-list.component';
 import { AvatarImageComponent } from './avatar-image/avatar-image.component';
 import { LibraryNameComponent } from './library-name/library-name.component';
-import { BookCountComponent } from './book-count/book-count.component';
 import { RatingComponent } from './rating/rating.component';
 import { EmporiumBoxComponent } from './emporium-box/emporium-box.component';
 import { BookListComponent } from './book-list/book-list.component';
@@ -46,7 +45,6 @@ import { DeleteWindowComponent } from './delete-window/delete-window.component';
     EmporiumListComponent,
     AvatarImageComponent,
     LibraryNameComponent,
-    BookCountComponent,
     RatingComponent,
     EmporiumBoxComponent,
     BookListComponent,
